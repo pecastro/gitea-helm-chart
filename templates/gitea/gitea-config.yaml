@@ -793,18 +793,18 @@ data:
     MODE = console
     ; Buffer length of the channel, keep it as it is if you don't know what it is.
     BUFFER_LEN = 10000
-    REDIRECT_MACARON_LOG = false
-    MACARON = file
+    REDIRECT_MACARON_LOG = true
+    MACARON = console
     ; Either "Trace", "Debug", "Info", "Warn", "Error", "Critical", default is "Info"
-    ROUTER_LOG_LEVEL = Info
+    ROUTER_LOG_LEVEL = Trace
     ROUTER = console
-    ENABLE_ACCESS_LOG = false
+    ENABLE_ACCESS_LOG = true
     ACCESS_LOG_TEMPLATE = \{\{.Ctx.RemoteAddr\}\} - \{\{.Identity\}\} \{\{.Start.Format "[02/Jan/2006:15:04:05 -0700]" \}\} "\{\{.Ctx.Req.Method\}\} \{\{.Ctx.Req.RequestURI\}\} \{\{.Ctx.Req.Proto\}\}" \{\{.ResponseWriter.Status\}\} \{\{.ResponseWriter.Size\}\} "\{\{.Ctx.Req.Referer\}\}\" \"\{\{.Ctx.Req.UserAgent\}\}"
     ACCESS = file
     ; Either "Trace", "Debug", "Info", "Warn", "Error", "Critical", default is "Trace"
-    LEVEL = Info
+    LEVEL = Trace
     ; Either "Trace", "Debug", "Info", "Warn", "Error", "Critical", default is "None"
-    STACKTRACE_LEVEL = None
+    STACKTRACE_LEVEL = Trace
 
     ; Generic log modes
     [log.x]
@@ -815,8 +815,12 @@ data:
 
     ; For "console" mode only
     [log.console]
-    LEVEL =
-    STDERR = false
+    MODE = console
+    LEVEL = Trace
+    STACKTRACE_LEVEL = Trace
+    FLAGS = stdflags
+    PREFIX =
+    COLORIZE = true # Or false if your windows terminal cannot color
 
     ; For "file" mode only
     [log.file]
