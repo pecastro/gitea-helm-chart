@@ -465,7 +465,7 @@ data:
     ; default to persistable-channel
     TYPE = persistable-channel
     ; data-dir for storing persistable queues and level queues, individual queues will be named by their type
-    DATADIR = queues/
+    DATADIR = gitea/queues/
     ; Default queue length before a channel queue will block
     LENGTH = 20
     ; Batch size to send for batched queues
