@@ -796,15 +796,15 @@ data:
     REDIRECT_MACARON_LOG = true
     MACARON = console
     ; Either "Trace", "Debug", "Info", "Warn", "Error", "Critical", default is "Info"
-    ROUTER_LOG_LEVEL = Trace
+    ROUTER_LOG_LEVEL = Debug
     ROUTER = console
     ENABLE_ACCESS_LOG = true
     ACCESS_LOG_TEMPLATE = \{\{.Ctx.RemoteAddr\}\} - \{\{.Identity\}\} \{\{.Start.Format "[02/Jan/2006:15:04:05 -0700]" \}\} "\{\{.Ctx.Req.Method\}\} \{\{.Ctx.Req.RequestURI\}\} \{\{.Ctx.Req.Proto\}\}" \{\{.ResponseWriter.Status\}\} \{\{.ResponseWriter.Size\}\} "\{\{.Ctx.Req.Referer\}\}\" \"\{\{.Ctx.Req.UserAgent\}\}"
     ACCESS = file
     ; Either "Trace", "Debug", "Info", "Warn", "Error", "Critical", default is "Trace"
-    LEVEL = Trace
+    LEVEL = Debug
     ; Either "Trace", "Debug", "Info", "Warn", "Error", "Critical", default is "None"
-    STACKTRACE_LEVEL = Trace
+    STACKTRACE_LEVEL = Debug
 
     ; Generic log modes
     [log.x]
@@ -816,8 +816,8 @@ data:
     ; For "console" mode only
     [log.console]
     MODE = console
-    LEVEL = Trace
-    STACKTRACE_LEVEL = Trace
+    LEVEL = Debug
+    STACKTRACE_LEVEL = Debug
     FLAGS = stdflags
     PREFIX =
     COLORIZE = true # Or false if your windows terminal cannot color
